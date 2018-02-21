@@ -5,7 +5,7 @@ import Data.Maybe
 square :: Integer -> Maybe Integer
 square n
     | n < 1 || n > 64 = Nothing
-    | otherwise = Just (2 ^ (n-1))
+    | otherwise = Just $ 2 ^ (n-1)
 
 total :: Integer
-total =  sum $ map (fromJust . square) [1..64]
+total =  2 ^ 64 - 1
