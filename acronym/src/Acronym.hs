@@ -1,6 +1,5 @@
 module Acronym (abbreviate) where
 
-import Data.List
 import Data.Char
 
 append xs x = xs++[toUpper x]
