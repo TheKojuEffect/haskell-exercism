@@ -7,5 +7,5 @@ import Data.Char (toLower)
 transform :: Map a String -> Map Char a
 transform = Map.fromList . Map.foldlWithKey transform' []
     where
-        transform' result point chars = result ++ map (`score` point) chars
+        transform' scoreList point chars = scoreList ++ map (`score` point) chars
         score char point = (toLower char, point)
