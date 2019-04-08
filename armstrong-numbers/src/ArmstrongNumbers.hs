@@ -2,13 +2,12 @@ module ArmstrongNumbers
   ( armstrong
   ) where
 
-import           Data.Char
-
-armstrong :: Int -> Bool
-armstrong n = n == calculate num 0
+armstrong :: Integral a => a -> Bool
+armstrong num = num == sum [d ^ len | d <- digits]
   where
-    num = show n
-    d = length num
-    calculate :: String -> Int -> Int
-    calculate [] total     = total
-    calculate (x:xs) total = calculate xs $ total + digitToInt x ^ d
+    len = length digits
+    digits = toDigits num
+    toDigits 0 = []
+    toDigits n = reminder : toDigits quotient
+      where (quotient, reminder) = n `divMod` 10
+
