@@ -1,8 +1,7 @@
 module Prime
   ( nth
   ) where
--- nth prime number in haskell
--- Implementation very similar to algorithm: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+-- Implementation to algorithm: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 nth :: Int -> Maybe Integer
 nth n
   | n < 1 = Nothing
