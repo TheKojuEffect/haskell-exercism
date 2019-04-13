@@ -1,6 +1,7 @@
 module Prime
   ( nth
   ) where
+
 -- Implementation to algorithm: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 nth :: Int -> Maybe Integer
 nth n
