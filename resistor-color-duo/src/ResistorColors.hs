@@ -17,7 +17,4 @@ data Color
   deriving (Eq, Show, Read, Enum)
 
 value :: [Color] -> Int
-value = resisterValue . reverse
-  where
-    resisterValue []     = 0
-    resisterValue (c:cs) = 10 * value cs + fromEnum c
+value = foldl (\n c -> n * 10 + fromEnum c) 0
